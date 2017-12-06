@@ -92,22 +92,23 @@ function pieChart() {
     legend(document.getElementById("pieLegend"), data1, pieChart);
 }
 
+
 function doughnutChart() {
     var data = [
         {
-            value: 40,
-            color:"#F38630",
-            label: 'Animals'
+            value: VCO,
+            color:"#9ACD32",
+            label: 'Concluídas'
         },
         {
-            value : 20,
-            color : "#E0E4CC",
-            label: 'People'
+            value : VAB,
+            color : "#FFC125",
+            label: 'Abertas'
         },
         {
-            value : 30,
-            color : "#69D2E7",
-            label: 'Aliens'
+            value : VCA,
+            color : "#E9967A",
+            label: 'Canceladas'
         }
     ];
 

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Visão 360</title>
+<title>Vis�o 360</title>
 <meta charset="utf-8">
     <link rel="stylesheet" href="css/controle.css">
     <link href="css/demo.css" rel="stylesheet" type="text/css">
@@ -30,6 +30,14 @@
 	var Parameter_2_AnoAtual = parseInt(url.searchParams.get("Parameter_2_AnoAtual"));
 	var Parameter_1_AnoAtual = parseInt(url.searchParams.get("Parameter_1_AnoAtual"));
 
+
+    //recupera valores visitas
+    var VCA = parseInt(url.searchParams.get("VCA"));
+    var VAB = parseInt(url.searchParams.get("VAB"));
+    var VCO = parseInt(url.searchParams.get("VCO"));
+
+
+
 	//console.log(Parameter_6_AnoAnterior);	
 	//console.log(Parameter_5_AnoAnterior);
 	//valore Gráfico de Compras
@@ -52,27 +60,27 @@
 	<div id="tudo" >
 		<div id="dentro"> 
 			<div id="tudo1"><div id="titulo"> COMPARATIVO DE COMPRAS</div>
-				    <canvas id="lineChart" width="300" height="260"></canvas>
+				    <canvas id="lineChart" width="250" height="250"></canvas>
 		    <center><div id="lineLegend"></div></center>
 			</div>
 		</div>
 	<div id="dentro">
 			<div id="tudo1">
-				<div><div id="titulo1"> INTERAÇÕES DO CLIENTE</div>
-				    <canvas id="pieChart" width="300" height="250"></canvas>
+				<div><div id="titulo1"> INTERA&Ccedil;&Otilde;ES DO CLIENTE</div>
+				    <canvas id="pieChart" width="230" height="240"></canvas>
 				    <center><div id="pieLegend"></div></center>
 			</div>
 	</div>
 	</div>
 
-	<div id="dentro">
-	<div id="tudo1" >
-		<div><div id="titulo1"> INTERAÇÕES DO CLIENTE</div>
-		    <canvas id="doughnutChart" width="300" height="250"></canvas>
-		    <div id="doughnutLegend"></div>
-		</div>
-	</div>
-	</div>
+    	<div id="dentro">
+        	<div id="tudo1" >
+        		<div><div id="titulo1"> VISITAS</div>
+        		    <canvas id="doughnutChart" width="230" height="240"></canvas>
+        		    <div id="doughnutLegend"></div>
+        		</div>
+        	</div>
+    	</div>
 
 
 

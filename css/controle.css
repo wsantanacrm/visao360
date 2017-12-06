@@ -1,14 +1,14 @@
 
 
 #titulo {
-	width: 350px;
+	width: 290px;
 	height: 20px;	
 /*    border-top-left-radius: 10px;
     border-top-right-radius: 10px;*/
         padding-top: 10px;
 }
 #titulo1 {
-	width: 350px;
+	width: 290px;
 	height: 20px;	
 /*    border-top-left-radius: 10px;
     border-top-right-radius: 10px;*/
@@ -17,8 +17,8 @@
 }
 
 #dentro {
-	width: 360px;
-	height: 360px;
+	width: 295px;
+	height: 325;
 	float: left;
 }
 
@@ -28,11 +28,11 @@
 	padding-top: 1px;
 	padding-right: 5px;
 	font-weight: bold;
-	
+
 }
 #tudo1 {
-	width: 350px;
-	height: 350px;
+	width: 290px;
+	height: 320px;
 	float: left;
 	text-align: center;
 /*	border-radius: 10px;*/
