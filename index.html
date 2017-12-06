@@ -2,18 +2,25 @@
 <head>
 <title>Visão 360</title>
 <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/controle.css">
     <link href="css/demo.css" rel="stylesheet" type="text/css">
-	<script src="vendor/Chart.js"></script>
-	<script src="src/legend.js"></script>
-	<script src="src/demo.js"></script>
+    <script src="vendor/Chart.js"></script>
+    <script src="src/legend.js"></script>
+    <script src="src/demo.js"></script>
+
 </head>
 <body>
+
 	<script type="text/javascript">
 	//recupera URL	
 	var url_atual = window.location.href;
 	var url_string = url_atual; //window.location.href
 	var url = new URL(url_string);
+
+    //recupera cliente
+    var CLI = url.searchParams.getElementsBy("CLI");
+
 	//recupera valores ano anterior
 	var Parameter_6_AnoAnterior = parseInt(url.searchParams.get("Parameter_6_AnoAnterior"));
 	var Parameter_5_AnoAnterior = parseInt(url.searchParams.get("Parameter_5_AnoAnterior"));
@@ -36,7 +43,30 @@
     var VAB = parseInt(url.searchParams.get("VAB"));
     var VCO = parseInt(url.searchParams.get("VCO"));
 
+    //recupera ticket 1
+    var t1id = url.searchParams.get("t1id");
+    var t1i  = url.searchParams.get("t1i");
+    var t1s  = url.searchParams.get("t1s");
+    var t1d  = url.searchParams.get("t1d");
 
+    //recupera ticket 2
+    var t2id = url.searchParams.get("t2id");
+    var t2i  = url.searchParams.get("t2i");
+    var t2s  = url.searchParams.get("t2s");
+    var t2d  = url.searchParams.get("t2d");
+
+        //recupera ticket 3
+    var t3id = url.searchParams.get("t3id");
+    var t3i  = url.searchParams.get("t3i");
+    var t3s  = url.searchParams.get("t3s");
+    var t3d  = url.searchParams.get("t3d");
+
+
+        //recupera ticket 4
+    var t4id = url.searchParams.get("t4id");
+    var t4i  = url.searchParams.get("t4i");
+    var t4s  = url.searchParams.get("t4s");
+    var t4d  = url.searchParams.get("t4d");
 
 	//console.log(Parameter_6_AnoAnterior);	
 	//console.log(Parameter_5_AnoAnterior);
@@ -67,7 +97,7 @@
 	<div id="dentro">
 			<div id="tudo1">
 				<div><div id="titulo1"> INTERA&Ccedil;&Otilde;ES DO CLIENTE</div>
-				    <canvas id="pieChart" width="230" height="240"></canvas>
+				    <canvas id="pieChart" width="230" height="250"></canvas>
 				    <center><div id="pieLegend"></div></center>
 			</div>
 	</div>
@@ -76,11 +106,117 @@
     	<div id="dentro">
         	<div id="tudo1" >
         		<div><div id="titulo1"> VISITAS</div>
-        		    <canvas id="doughnutChart" width="230" height="240"></canvas>
+        		    <canvas id="doughnutChart" width="230" height="250"></canvas>
         		    <div id="doughnutLegend"></div>
         		</div>
         	</div>
     	</div>
+        <div id="dentro">
+            <div id="tudo1" >
+                <div><div id="titulo1"> CR&Eacute;DITO</div>
+                    <div id="credito">
+                        <form>
+                          <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">Cr&eacute;dito Total</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" disabled="true">
+                          </div>
+                          <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput2">Cr&eacute;dito Dispon&iacute;vel</label>
+                            <div class="alert alert-danger" role="alert"><center> R$0.00</center></div>
+                          </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="dentro1">
+            <div id="tudo2" >
+                <div><div id="titulo2"> PARTIDAS EM ABERTO</div>
+                <table class="table table-hover">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Documento</th>
+                      <th scope="col">TP DOC</th>
+                      <th scope="col">Valor</th>
+                      <th scope="col">Data</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">80009853</th>
+                      <td>KR</td>
+                      <td>R$ 1.256,00</td>
+                      <td>01/12/2017</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">80001056</th>
+                      <td>KR</td>
+                      <td>R$ 3.053,00</td>
+                      <td>11/11/2017</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">80003691</th>
+                      <td>KR</td>
+                      <td>R$ 1.751,00</td>
+                      <td>22/09/2017</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+
+                <div id="dentro1">
+            <div id="tudo2" >
+                <div><div id="titulo2"> RECLAMA&Ccedil;&Otilde;ES</div>
+                <table class="table table-hover">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Reclama&ccedil;&atilde;o</th>
+                      <th scope="col">Descri&ccedil;&otilde;es</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Data</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">  <script>document.write(t1id)</script></th>
+                      <td><script>document.write(t1i)</script></td>
+                      <td><script>document.write(t1s)</script></td>
+                      <td><script>document.write(t1d)</script></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">  <script>document.write(t1id)</script></th>
+                      <td><script>document.write(t2i)</script></td>
+                      <td><script>document.write(t2s)</script></td>
+                      <td><script>document.write(t2d)</script></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">  <script>document.write(t1id)</script></th>
+                      <td><script>document.write(t3i)</script></td>
+                      <td><script>document.write(t3s)</script></td>
+                      <td><script>document.write(t3d)</script></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">  <script>document.write(t1id)</script></th>
+                      <td><script>document.write(t4i)</script></td>
+                      <td><script>document.write(t4s)</script></td>
+                      <td><script>document.write(t4d)</script></td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
 
 
 
