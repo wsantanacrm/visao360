@@ -20,6 +20,43 @@
 
     //recupera cliente
     var CLI = url.searchParams.get("CLI");
+    var CRET = " - - - -";
+    var CRED = " - - - -";
+
+var escreveC ="";
+var escreveCT ="";
+            //Válida cliente e altera dados crédito e partidas em aberto
+            if (CLI =="1002826") {
+            CRED = "R$ 5.360,00";
+            CREDT = "R$ 10.000,00";
+             escreveCT = "<div class='alert alert-info' role='alert'><center> "+ CREDT +"</center></div>" ;
+            escreveC = "<div class='alert alert-info' role='alert'><center> "+ CRED +"</center></div>" ;
+            } else if (CLI =="10192") {
+            CRED = "R$ 1.340,00";
+            CREDT = "R$ 3.000,00";
+            escreveCT = "<div class='alert alert-info' role='alert'><center> "+ CREDT +"</center></div>" ;
+            escreveC = "<div class='alert alert-info' role='alert'><center> "+ CRED +"</center></div>" ;
+
+            } else if (CLI =="1002790") {
+            CRED = "R$ 53.320,00";
+            CREDT = "R$ 323.000,00";
+            escreveCT = "<div class='alert alert-info' role='alert'><center> "+ CREDT +"</center></div>" ;
+            escreveC = "<div class='alert alert-info' role='alert'><center> "+ CRED +"</center></div>" ;
+            } else if (CLI =="1002612") {
+            CRED = "R$ 13.861,00";
+            CREDT = "R$ 22.000,00";
+            escreveCT = "<div class='alert alert-info' role='alert'><center> "+ CREDT +"</center></div>" ;
+            escreveC = "<div class='alert alert-info' role='alert'><center> "+ CRED +"</center></div>" ;
+            } else {
+            CRED = "R$ --,-- ";
+            CREDT = "R$ --,--";
+            escreveCT = "<div class='alert alert-info' role='alert'><center> "+ CREDT +"</center></div>" ;
+            escreveC = "<div class='alert alert-info' role='alert'><center> "+ CRED +"</center></div>" ;
+            }
+
+
+
+
 
 	//recupera valores ano anterior
 	var Parameter_6_AnoAnterior = parseInt(url.searchParams.get("Parameter_6_AnoAnterior"));
@@ -42,6 +79,13 @@
     var VCA = parseInt(url.searchParams.get("VCA"));
     var VAB = parseInt(url.searchParams.get("VAB"));
     var VCO = parseInt(url.searchParams.get("VCO"));
+
+    if (VCA ==0 && VAB==0 && VCO==0){
+        var controleV = 1;
+        //alert("Oi");
+    }
+
+    //console.log(VCA);
 
     //recupera ticket 1
     var t1id = url.searchParams.get("t1id");
@@ -96,7 +140,7 @@
 		</div>
 	<div id="dentro">
 			<div id="tudo1">
-				<div><div id="titulo1"> INTERA&Ccedil;&Otilde;ES DO CLIENTE</div>
+				<div><div id="titulo1"> INTERA&Ccedil;&Otilde;ES DO CLIENTE </div>
 				    <canvas id="pieChart" width="230" height="250"></canvas>
 				    <center><div id="pieLegend"></div></center>
 			</div>
@@ -110,11 +154,11 @@
                         <form>
                           <div class="form-group">
                             <label class="col-form-label" for="formGroupExampleInput">Cr&eacute;dito Total</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" disabled="true">
+                            <script> document.write(escreveCT)</script>
                           </div>
                           <div class="form-group">
                             <label class="col-form-label" for="formGroupExampleInput2">Cr&eacute;dito Dispon&iacute;vel</label>
-                            <div class="alert alert-danger" role="alert"><center> R$0.00</center></div>
+                            <div class="alert alert-danger" role="alert"><center> <script>document.write(CRED)</script></center></div>
                           </div>
                         </form>
 
@@ -125,8 +169,8 @@
         <div id="dentro">
             <div id="tudo1" >
                 <div><div id="titulo1"> VISITAS DO M&Ecirc;S</div>
-                    <canvas id="doughnutChart" width="230" height="250"></canvas>
-                    <div id="doughnutLegend"></div>
+            <canvas id='doughnutChart' width='230' height='250'></canvas> <div id='doughnutLegend'></div>
+
                 </div>
             </div>
         </div>
@@ -230,6 +274,8 @@
 
 	</div>
 </div>
+<script type="text/javascript">
 
+</script>
 </body>
 </html>

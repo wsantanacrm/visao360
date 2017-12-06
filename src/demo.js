@@ -94,6 +94,17 @@ function pieChart() {
 
 
 function doughnutChart() {
+
+if (controleV ==1){
+
+        var data = [
+        {
+            value : controleV,
+            color : "#696969",
+            label: 'Sem Visitas'
+        }
+    ];
+} else {
     var data = [
         {
             value: VCO,
@@ -111,6 +122,7 @@ function doughnutChart() {
             label: 'Canceladas'
         }
     ];
+}
 
     var ctx = document.getElementById("doughnutChart").getContext("2d");
     var doughnutChart = new Chart(ctx).Doughnut(data);
