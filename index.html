@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Visão 360</title>
+<meta charset="utf-8">
+    <link rel="stylesheet" href="css/controle.css">
+    <link href="css/demo.css" rel="stylesheet" type="text/css">
+	<script src="vendor/Chart.js"></script>
+	<script src="src/legend.js"></script>
+	<script src="src/demo.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	//recupera URL	
+	var url_atual = window.location.href;
+	var url_string = url_atual; //window.location.href
+	var url = new URL(url_string);
+	//recupera valores ano anterior
+	var Parameter_6_AnoAnterior = parseInt(url.searchParams.get("Parameter_6_AnoAnterior"));
+	var Parameter_5_AnoAnterior = parseInt(url.searchParams.get("Parameter_5_AnoAnterior"));
+	var Parameter_4_AnoAnterior = parseInt(url.searchParams.get("Parameter_4_AnoAnterior"));
+	var Parameter_3_AnoAnterior = parseInt(url.searchParams.get("Parameter_3_AnoAnterior"));
+	var Parameter_2_AnoAnterior = parseInt(url.searchParams.get("Parameter_2_AnoAnterior"));
+	var Parameter_1_AnoAnterior = parseInt(url.searchParams.get("Parameter_1_AnoAnterior"));
+
+	//recupera valores ano atual
+	var Parameter_6_AnoAtual = parseInt(url.searchParams.get("Parameter_6_AnoAtual"));
+	var Parameter_5_AnoAtual = parseInt(url.searchParams.get("Parameter_5_AnoAtual"));
+	var Parameter_4_AnoAtual = parseInt(url.searchParams.get("Parameter_4_AnoAtual"));
+	var Parameter_3_AnoAtual = parseInt(url.searchParams.get("Parameter_3_AnoAtual"));
+	var Parameter_2_AnoAtual = parseInt(url.searchParams.get("Parameter_2_AnoAtual"));
+	var Parameter_1_AnoAtual = parseInt(url.searchParams.get("Parameter_1_AnoAtual"));
+
+	//console.log(Parameter_6_AnoAnterior);	
+	//console.log(Parameter_5_AnoAnterior);
+	//valore Gráfico de Compras
+
+	//var anterior = "[" + Parameter_6_AnoAnterior + ","+ Parameter_5_AnoAnterior + ","+ Parameter_4_AnoAnterior+ ","+ Parameter_3_AnoAnterior+ ","+ Parameter_2_AnoAnterior+ ","+ Parameter_1_AnoAnterior + "]";
+	//
+	var anterior = [Parameter_6_AnoAnterior];
+	anterior.push(Parameter_5_AnoAnterior, Parameter_4_AnoAnterior, Parameter_3_AnoAnterior, Parameter_2_AnoAnterior, Parameter_1_AnoAnterior);
+	console.log(anterior);
+
+
+	var atual = [Parameter_6_AnoAtual];
+	atual.push(Parameter_5_AnoAtual,Parameter_4_AnoAtual,Parameter_3_AnoAtual,Parameter_2_AnoAtual,Parameter_1_AnoAtual);
+	console.log(atual);
+	var CComprasAP = anterior; //[59,10,81,56,55,100]
+	var CComprasA = [59,10,81,56,55,100]; //
+
+	//console.log(CComprasAP);
+	</script>
+	<div id="tudo" >
+		<div id="dentro"> 
+			<div id="tudo1"><div id="titulo"> COMPARATIVO DE COMPRAS</div>
+				    <canvas id="lineChart" width="300" height="260"></canvas>
+		    <center><div id="lineLegend"></div></center>
+			</div>
+		</div>
+	<div id="dentro">
+			<div id="tudo1">
+				<div><div id="titulo1"> INTERAÇÕES DO CLIENTE</div>
+				    <canvas id="pieChart" width="300" height="250"></canvas>
+				    <center><div id="pieLegend"></div></center>
+			</div>
+	</div>
+	</div>
+
+	<div id="dentro">
+	<div id="tudo1" >
+		<div><div id="titulo1"> INTERAÇÕES DO CLIENTE</div>
+		    <canvas id="doughnutChart" width="300" height="250"></canvas>
+		    <div id="doughnutLegend"></div>
+		</div>
+	</div>
+	</div>
+
+
+
+	<div id="tudo1" hidden="false">
+
+		<div><center>Fluxo de Vendas</center> 
+		    <canvas id="barsChart" width="300" height="300"></canvas>
+		    <div id="barsLegend"></div>
+		</div>
+
+
+	</div>
+</div>
+
+</body>
+</html>

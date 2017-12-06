@@ -1,0 +1,35 @@
+body {
+    font-family: Sans-Serif;
+    font-size: 13;
+    background-color: #f5f5f5;
+}
+
+#fork {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
+.legend {
+    width: 330px;
+	height: 15px;
+	padding:10px;
+
+}
+
+.legend .title {
+    display: inline-flex;
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
+    padding: 0 0.3em;
+}
+
+.legend .color-sample {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em; 
+    margin-right: 0.5em;
+}
