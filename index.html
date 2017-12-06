@@ -19,7 +19,7 @@
 	var url = new URL(url_string);
 
     //recupera cliente
-    var CLI = url.searchParams.getElementsBy("CLI");
+    var CLI = url.searchParams.get("CLI");
 
 	//recupera valores ano anterior
 	var Parameter_6_AnoAnterior = parseInt(url.searchParams.get("Parameter_6_AnoAnterior"));
@@ -103,14 +103,6 @@
 	</div>
 	</div>
 
-    	<div id="dentro">
-        	<div id="tudo1" >
-        		<div><div id="titulo1"> VISITAS</div>
-        		    <canvas id="doughnutChart" width="230" height="250"></canvas>
-        		    <div id="doughnutLegend"></div>
-        		</div>
-        	</div>
-    	</div>
         <div id="dentro">
             <div id="tudo1" >
                 <div><div id="titulo1"> CR&Eacute;DITO</div>
@@ -127,6 +119,14 @@
                         </form>
 
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="dentro">
+            <div id="tudo1" >
+                <div><div id="titulo1"> VISITAS DO M&Ecirc;S</div>
+                    <canvas id="doughnutChart" width="230" height="250"></canvas>
+                    <div id="doughnutLegend"></div>
                 </div>
             </div>
         </div>
